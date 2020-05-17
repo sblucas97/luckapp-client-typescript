@@ -5,7 +5,9 @@ declare module 'styled-components' {
     colors: {
       primary: string
       secondary: string
-      blue: string
+      terciary: string
+      quaternary: string
+      quinaria: string
     }
     space: []
 

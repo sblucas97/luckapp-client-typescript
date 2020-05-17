@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import {
   variant,
   space,
@@ -14,16 +14,34 @@ import {
   PositionProps
 } from 'styled-system'
 
-export interface ButtonProps extends SpaceProps, LayoutProps, ColorProps, BorderProps, PositionProps {
-  variant: string
+type ButtonVariants = {
+  primary: 'primary'
+  secondary: 'secondary'
 }
 
-const ButtonComponent: React.FC<ButtonProps> = styled.button`
+export interface ButtonProps extends SpaceProps, LayoutProps, ColorProps, BorderProps, PositionProps {
+  variant: keyof ButtonVariants
+  isLoading?: boolean
+  disabled?: boolean
+}
+
+const ButtonComponent: React.FC<ButtonProps> = ({ isLoading, disabled, children, ...props }) => {
+  const buttonChildren = isLoading ? 'Carregando...' : children
+  const isDisabled = disabled || isLoading
+
+  return (
+    <Button disabled={isDisabled} {...props}>
+      {buttonChildren}
+    </Button>
+  )
+}
+
+const Button: React.FC<ButtonProps> = styled.button`
   ${variant({
     variants: {
       primary: {
         bg: 'primary',
-        color: 'black'
+        color: 'white'
       },
       secondary: {
         bg: 'secondary',
@@ -40,10 +58,17 @@ const ButtonComponent: React.FC<ButtonProps> = styled.button`
   ${color}
   ${border}
   ${position}
+  ${({ disabled }) => {
+    if (disabled) {
+      return css`
+        background-color: gray;
+      `
+    }
+  }}
 `
 
 ButtonComponent.defaultProps = {
-  width: 'regular'
+  width: 'big'
 }
 
 export default ButtonComponent
