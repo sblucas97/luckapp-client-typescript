@@ -29,6 +29,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'prettier/prettier': 2,
     'space-before-function-paren': 0,
+    'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off'
   }
 }
