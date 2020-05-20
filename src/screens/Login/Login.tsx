@@ -3,20 +3,18 @@ import { useForm } from 'react-hook-form'
 
 import { Column, Input, Button } from 'components'
 import { loginSchema } from 'utils/yup-schemas'
+import { useUser } from 'context/user'
 
 interface LoginValues {
   email: string
   password: string
 }
 
-const Login = () => {
+const Login: React.FC = () => {
   const { register, handleSubmit, errors, formState } = useForm<LoginValues>({ validationSchema: loginSchema })
+  const { login } = useUser()
 
-  const onSubmit = handleSubmit(values => {
-    return new Promise(resolve => {
-      setTimeout(() => resolve(console.log(values)), 2000)
-    })
-  })
+  const onSubmit = handleSubmit(login)
 
   return (
     <Column bg='primary' minHeight='100vh' alignItems='center' justifyContent='center'>

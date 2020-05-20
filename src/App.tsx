@@ -2,6 +2,7 @@ import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
+import { useUser } from 'context/user'
 import { theme } from 'theme'
 
 import AuthenticatedApp from './AuthenticatedApp'
@@ -25,9 +26,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-const user = null
-
 const App: React.FC = () => {
+  const { user } = useUser()
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
