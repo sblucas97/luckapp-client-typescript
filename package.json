@@ -1,7 +1,9 @@
 {
-  "name": "react-boilerplate-typescript",
+  "name": "luckapp-client-typescript",
   "version": "0.1.0",
   "private": true,
+  "description": "Basic CRUD to create and realize draws.",
+  "author": "Lucas Barbosa <bking.lucas97@gmail.com>",
   "dependencies": {
     "axios": "^0.19.2",
     "react": "^16.13.1",
@@ -19,9 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "commit": "npx git-cz",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "commit": "npx git-cz"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,11 +41,6 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@storybook/addon-actions": "^5.3.18",
-    "@storybook/addon-links": "^5.3.18",
-    "@storybook/addons": "^5.3.18",
-    "@storybook/preset-create-react-app": "^2.1.2",
-    "@storybook/react": "^5.3.18",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
@@ -64,8 +59,7 @@
     "eslint-plugin-react-hooks": "^4.0.2",
     "husky": ">=4",
     "lint-staged": ">=10",
-    "prettier": "^2.0.5",
-    "themeprovider-storybook": "^1.5.1"
+    "prettier": "^2.0.5"
   },
   "husky": {
     "hooks": {
