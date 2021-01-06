@@ -5,7 +5,7 @@
   "description": "Basic CRUD to create and realize draws.",
   "author": "Lucas Barbosa <bking.lucas97@gmail.com>",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.7.2",
