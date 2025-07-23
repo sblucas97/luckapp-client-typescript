@@ -1,4 +1,4 @@
-# Nave Boilerplate
+
 
 Boilerplate baseado no [Create React App](https://github.com/facebook/create-react-app) com o template de suporte para typescript.
 
